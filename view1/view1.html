@@ -1,0 +1,37 @@
+<div class="">
+	<div class="col-md-6 col-md-offset-3" ng-show="!showSign">
+		<h1>Give me some text</h1>
+		<p><input class="form-control" type="text" ng-model="text"></p>
+		<p>
+			<select class="form-control" ng-model="font">
+				<option value="Barrio">Barrio</option>
+				<option value="Roboto">Roboto</option>
+				<option value="Metamorphous">Metamorphous</option>
+				<option value="Indie Flower">Indie Flower</option>
+			</select>
+		</p>
+		<p><button class="btn btn-default" ng-click="makeSign()">Make my sign</button>
+	</div>
+
+	<div ng-show="showSign" class="sign jumbotron vertical-center center-text">
+		<link href="http://fonts.googleapis.com/css?family={{ font }}" rel="stylesheet" type="text/css">
+		<style>
+			.vertical-center {
+			  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+			  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+			  display: flex;
+			  align-items: center;
+			}
+
+
+			div.sign h1 {
+				font-family: "{{ font }}";
+			}
+
+		</style>
+		<h1>{{ text }}</h1>
+	</div>
+
+	<div>
+</div>
